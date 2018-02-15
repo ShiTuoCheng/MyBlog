@@ -41,7 +41,7 @@ export default {
             },
       ],
 
-      headTitle: "HI - I'M STC AND I WRITE ABOUT CODING ^.^"
+      headTitle: "HI - I'M STC AND I SHARE ABOUT CODING TECHINIC ^.^"
     }
   }
 }
