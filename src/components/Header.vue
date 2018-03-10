@@ -1,8 +1,8 @@
 <template>
-  <header class="c-header">
+  <header class="c-header" :class="{innerHeader: floatHeader}">
     <div class="wrapper">
       <nav class="c-header-nav">
-        <li class="c-header-nav-item" v-for="navItem in navList" :to="navItem.url" :key="navItem.title" v-on:click="clickNav(navItem.url)" v-bind:class="{selected: navSel === navItem.url}">
+        <li class="c-header-nav-item" v-for="(navItem, index) in navList" :to="navItem.url" :key="navItem.title" @click="clickNav(navItem.url, index)" :class="{selected: navSel === navItem.url}">
           {{ navItem.title }}
           <div class="c-header-bar"></div>
         </li>
@@ -13,11 +13,12 @@
 <script>
 import router from 'vue-router';
 
-const r = new router();
 export default {
   name: 'c-header',
   data () {
     return {
+      floatHeader: false,
+      match: false,
       navSel: null,
       navList: [
             {
@@ -27,22 +28,22 @@ export default {
 
             {
               title: 'ARTICLES',
-              url: '/araticle'
+              url: 'article'
             },
 
             {
               title: 'MEMORIES',
-              url: '/memory'
+              url: 'memory'
             },
 
             {
               title: 'ABOUT',
-              url: '/about'
+              url: 'about'
             },
             
             {
               title: 'CONTACT',
-              url: '/aboutMe'
+              url: 'aboutMe'
             },
       ]
     }
@@ -56,10 +57,16 @@ export default {
     }
   },
 
+  created() {
+    this.floatHeader = (this.$route.path !== '/') ? true: false;
+  },
+
   methods: {
-    clickNav: function(eve) {
-      r.replace(eve);
+    clickNav: function(eve, i) {
+      this.$router.push(eve);
       this.navSel = eve;
+
+      this.floatHeader = (i !== 0) ?  true :  false;
     }
   }
 }
@@ -67,6 +74,7 @@ export default {
 <style lang="less" scoped>
 .c-header{
   margin-top: 70px;
+  transition: all .7s;
 
   &-nav-item{
 
@@ -117,5 +125,11 @@ export default {
   .c-header-bar{
     width: 100%;
   }
+}
+
+.innerHeader{
+
+  margin-top: 30px;
+  transform: translateX(40%);
 }
 </style>

@@ -7,23 +7,9 @@
 
       <transition name="slide-fade">
         <ul class="c-article-list" v-if="isTrans1">
-          <li class="c-article-list-item">
+          <li class="c-article-list-item" v-for="titleItem1 in titleList1" :key="titleItem1.index">
             <p class="c-article-title">
-              Because new fashion do never follow trends?
-            </p>
-
-            <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
-          </li>
-          <li class="c-article-list-item">
-            <p class="c-article-title">
-              How to switch from PS to sketch?
-            </p>
-
-            <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
-          </li>
-          <li class="c-article-list-item">
-            <p class="c-article-title">
-              Should developers design?
+              {{titleItem1}}
             </p>
 
             <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
@@ -33,23 +19,9 @@
 
       <transition name="slide-fade">
         <ul class="c-article-list last" v-if="isTrans2">
-          <li class="c-article-list-item">
+          <li class="c-article-list-item"  v-for="titleItem2 in titleList2" :key="titleItem2.index">
             <p class="c-article-title">
-              Because new fashion do never follow trends?
-            </p>
-
-            <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
-          </li>
-          <li class="c-article-list-item">
-            <p class="c-article-title">
-              How to switch from PS to sketch?
-            </p>
-
-            <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
-          </li>
-          <li class="c-article-list-item">
-            <p class="c-article-title">
-              Should developers design?
+              {{titleItem2}}
             </p>
 
             <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
@@ -75,6 +47,8 @@ export default {
       progressVal: 0,
       isTrans1: true,
       isTrans2: false,
+      titleList1: [],
+      titleList2: [],
       count: 1
     }
   },
@@ -99,6 +73,10 @@ export default {
     // get articles
     getArticles() {
 
+      this.$http.get('../../static/titleData.json').then((response) => {
+        this.titleList1 = response.data.articleTitle.slice(-3);
+        this.titleList2 = response.data.articleTitle.slice(-6, -3);
+      })
     },
 
     // start progress
@@ -193,6 +171,7 @@ export default {
     flex-direction: row;
     flex-wrap: nowrap;
     -webkit-flex-wrap: nowrap;
+    text-align: center;
   }
 }
 

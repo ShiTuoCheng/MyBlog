@@ -11,9 +11,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "html-loader": "^0.5.5",
     "less": "^3.0.0",
     "less-loader": "^4.0.5",
+    "markdown-loader": "^2.0.2",
     "vue": "^2.5.2",
+    "vue-axios": "^2.0.2",
     "vue-router": "^3.0.1",
     "whatwg-fetch": "^2.0.3"
   },
