@@ -2,46 +2,64 @@
   <header class="c-header">
     <div class="wrapper">
       <nav class="c-header-nav">
-        <router-link class="c-header-nav-item" v-for="navItem in navList" :key="navItem.title" tag="li">
+        <li class="c-header-nav-item" v-for="navItem in navList" :to="navItem.url" :key="navItem.title" v-on:click="clickNav(navItem.url)" v-bind:class="{selected: navSel === navItem.url}">
           {{ navItem.title }}
           <div class="c-header-bar"></div>
-        </router-link>
+        </li>
       </nav>
-
-      <h1 class="c-header-title">{{ headTitle }}</h1>
-
-      <hr>
     </div>
   </header>
 </template>
 <script>
+import router from 'vue-router';
+
+const r = new router();
 export default {
   name: 'c-header',
   data () {
     return {
+      navSel: null,
       navList: [
             {
-              title: 'STC'
+              title: 'STC',
+              url: '/'
             },
 
             {
-              title: 'ARTICLES'
+              title: 'ARTICLES',
+              url: '/araticle'
             },
 
             {
-              title: 'MEMORIES'
+              title: 'MEMORIES',
+              url: '/memory'
             },
 
             {
-              title: 'ABOUT'
+              title: 'ABOUT',
+              url: '/about'
             },
             
             {
-              title: 'CONTACT'
+              title: 'CONTACT',
+              url: '/aboutMe'
             },
-      ],
+      ]
+    }
+  },
 
-      headTitle: "HI - I'M STC AND I SHARE ABOUT CODING TECHINIC ^.^"
+  computed: {
+    navObj(nav) {
+      return {
+        'selected':this.navSel === nav
+      }
+    }
+  },
+
+  methods: {
+    clickNav: function(eve) {
+      r.replace(eve);
+      this.navSel = eve;
     }
   }
 }
@@ -55,6 +73,7 @@ export default {
     margin-right: 30px;
     color: lightgray;
     position: relative;
+    display: inline-block;
     cursor: pointer;
     transition: color 1s;
 
@@ -64,6 +83,8 @@ export default {
       font-size: 30px;
       margin-right: 40px;
       vertical-align: middle;
+
+      .selected;
     }
 
     &:hover{
@@ -87,20 +108,14 @@ export default {
     left: 0;
     background-color: #000;
   }
+}
 
-  &-title{
+.selected{
 
-    font-weight: bolder;
-    font-size: 50px;
-    margin-top: 50px;
-    width: 550px;
-  }
+  color: #000;
 
-  hr{
-
-    border: 1px solid gray;
-    margin-top: 30px;
-    width: 60%;
+  .c-header-bar{
+    width: 100%;
   }
 }
 </style>

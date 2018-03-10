@@ -1,31 +1,17 @@
 <template>
   <div id="app">
     <v-header></v-header>
-    <v-article-bar></v-article-bar>
-      <div class="bg" :style="{height: bgHeight + 'px'}"></div>
-    <div class="clear"></div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import vHeader from './components/Header'
-import vArticleBar from './components/ArticleBar'
 
 export default {
   name: 'App',
   components: {
-    vHeader,
-    vArticleBar
-  },
-  data() {
-    return {
-
-      bgHeight: 0
-    }
-  },
-
-  created() {
-    this.bgHeight = window.innerHeight;
+    vHeader
   }
 }
 </script>
@@ -41,20 +27,9 @@ export default {
   margin: 0 auto;
   overflow: hidden;
 
-  .c-header, .c-article{
+  .c-header{
     float: left;
   }
 
-  .bg{
-    width: 400px;
-    background-image: url('./assets/bg.png');
-    background-size: cover;
-    margin-left: 800px;
-  }
-
-  .clear{
-
-    clear: both;
-  }
 }
 </style>

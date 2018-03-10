@@ -62,6 +62,8 @@
 </template>
 
 <script>
+import 'whatwg-fetch';
+
 export default {
   name: "article-bar",
   components: {
@@ -80,6 +82,7 @@ export default {
   created() {
     const timer = null;
     this.startProgress();
+    this.getArticles();
   },
 
   computed: {
@@ -92,6 +95,11 @@ export default {
   },
 
   methods: {
+
+    // get articles
+    getArticles() {
+
+    },
 
     // start progress
     startProgress() {
