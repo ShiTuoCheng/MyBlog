@@ -33,6 +33,7 @@ export default {
 
 <style lang="less">
 @import './css/userControl.less';
+@import './css/github-markdown.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

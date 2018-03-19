@@ -1,7 +1,8 @@
 <template>
+
   <section class="article-detail">
-    <div id="article-detail-content">
-    </div>
+    <article id="article-detail-content" class="markdown-body">
+    </article>
   </section>
 </template>
 <script>
@@ -22,11 +23,11 @@ export default {
 <style lang="less" scoped>
 
 .article-detail{
-  margin-top: 100px;
+  position: absolute;
+  top: 200px;
   width: 1200px;
   min-width: 1200px;
   margin: 0 auto;
-  float: left;
   background-color: #eeeeee;
 
     padding: 20px;

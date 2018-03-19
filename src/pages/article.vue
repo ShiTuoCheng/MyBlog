@@ -30,7 +30,7 @@ export default {
 
   &-list{
     text-align: center;
-    margin-top: 70px;
+    margin-top: 200px;
 
     &-item:hover {
 

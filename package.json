@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "github-markdown-css": "^2.10.0",
     "html-loader": "^0.5.5",
     "less": "^3.0.0",
     "less-loader": "^4.0.5",

@@ -74,8 +74,24 @@ export default {
 </script>
 <style lang="less" scoped>
 .c-header{
-  margin-top: 70px;
+  position: fixed;
+  float: left;
+  z-index: 10;
+  padding: 20px 0 0 20px;
+  background: white;
+  width: 100%;
+  top: 0;
   transition: all .7s;
+
+  .wrapper{
+    min-width: 1200px;
+    width: 1200px;
+    margin: 0;
+  }
+
+  &-nav{
+    transition: all .7s;
+  }
 
   &-nav-item{
 
@@ -129,8 +145,11 @@ export default {
 }
 
 .innerHeader{
-
-  margin-top: 30px;
-  transform: translateX(38%);
+  .c-header{
+    padding: 0;
+  }
+  .c-header-nav{
+    transform: translateX(30%);
+  }
 }
 </style>
