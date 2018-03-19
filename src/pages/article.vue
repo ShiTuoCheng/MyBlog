@@ -2,7 +2,7 @@
   <section class="article wrapper">
     <ul class="article-list">
       <transition-group name="list">
-        <li v-for="(titleItem, index) in titleList" :key="index">{{titleItem}}</li>
+        <li class="article-list-item" v-for="(titleItem, index) in titleList" :key="index">{{titleItem}}</li>
       </transition-group>
     </ul>
   </section>
@@ -26,9 +26,29 @@ export default {
 <style lang="less" scoped>
 .article, .wrapper{
   float: left;
+  transform: translateX(10%);
 
   &-list{
-    margin: 0 auto;
+    text-align: center;
+    margin-top: 70px;
+
+    &-item:hover {
+
+        box-shadow: 0px 0px 5px #b2b2b2;
+    }
+
+    &-item{
+
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 5px;
+      border: 1px solid #e6e6e6;
+      cursor: pointer;
+      transition: all .7s;
+    }
   }
 }
 

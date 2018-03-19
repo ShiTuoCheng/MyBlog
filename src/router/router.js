@@ -3,6 +3,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Index from '../pages/index';
 import Article from '../pages/article';
+import ArticleDetail from "../pages/articleDetail";
 
 Vue.use(Router);
 
@@ -17,6 +18,11 @@ export default new Router(
       {
         path: '/article',
         component: Article
+      },
+
+      {
+        path: '/articleDetail',
+        component: ArticleDetail
       }
     ]
   }

@@ -12,7 +12,7 @@
               {{titleItem1}}
             </p>
 
-            <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
+            <div class="c-article-more-btn" @click="open()"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
           </li>
         </ul>
       </transition>
@@ -24,7 +24,7 @@
               {{titleItem2}}
             </p>
 
-            <div class="c-article-more-btn"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
+            <div class="c-article-more-btn" @click="open()"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
           </li>
         </ul>
       </transition>
@@ -60,7 +60,7 @@ export default {
   },
 
   computed: {
-
+    
   },
 
   destroyed() {
@@ -77,6 +77,20 @@ export default {
         this.titleList1 = response.data.articleTitle.slice(-3);
         this.titleList2 = response.data.articleTitle.slice(-6, -3);
       })
+    },
+
+    randomArr(arr) {
+
+      for(let i = arr.length - 1; i > 0; i--){
+        let j = Math.floor(Math.random() * i);
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+
+      return arr;
+    },
+
+    open() {
+      this.$router.push('articleDetail')
     },
 
     // start progress

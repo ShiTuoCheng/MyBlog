@@ -66,7 +66,8 @@ export default {
       this.$router.push(eve);
       this.navSel = eve;
 
-      this.floatHeader = (i !== 0) ?  true :  false;
+      // this.floatHeader = (i !== 0) ?  true :  false;
+      this.floatHeader = (this.$route.path !== '/') ? true: false;
     }
   }
 }
@@ -130,6 +131,6 @@ export default {
 .innerHeader{
 
   margin-top: 30px;
-  transform: translateX(40%);
+  transform: translateX(38%);
 }
 </style>
