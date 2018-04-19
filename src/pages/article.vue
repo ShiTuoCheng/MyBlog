@@ -19,7 +19,7 @@ export default {
 
   created() {
 
-    this.$http.get('../../static/titleData.json').then((res) => this.titleList = res.data.articleTitle);
+    this.$http.get('../../static/titleData.json').then((res) => this.titleList = res.data.article.map(v => v.title));
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <section class="index">
     <h1 class="index-title">{{ headTitle }}</h1>
-    <v-article-bar></v-article-bar>
+    <v-article-bar v-once></v-article-bar>
     <div class="index-bg" :style="{height: bgHeight + 'px'}"></div>
     <div class="clear"></div>
   </section>

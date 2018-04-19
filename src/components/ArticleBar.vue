@@ -9,10 +9,9 @@
         <ul class="c-article-list" v-if="isTrans1">
           <li class="c-article-list-item" v-for="titleItem1 in titleList1" :key="titleItem1.index">
             <p class="c-article-title">
-              {{titleItem1}}
+              {{titleItem1.title}}
             </p>
-
-            <div class="c-article-more-btn" @click="open()"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
+            <v-button :article-path="titleItem1.path"></v-button>
           </li>
         </ul>
       </transition>
@@ -21,10 +20,9 @@
         <ul class="c-article-list last" v-if="isTrans2">
           <li class="c-article-list-item"  v-for="titleItem2 in titleList2" :key="titleItem2.index">
             <p class="c-article-title">
-              {{titleItem2}}
+              {{titleItem2.title}}
             </p>
-
-            <div class="c-article-more-btn" @click="open()"><p class="btn-font">More</p><div class="btn-arrow"></div></div>
+            <v-button :article-path="titleItem2.path"></v-button>
           </li>
         </ul>
       </transition>
@@ -35,11 +33,12 @@
 
 <script>
 import 'whatwg-fetch';
+import vButton from '../components/C-Button';
 
 export default {
   name: "article-bar",
   components: {
-
+    vButton
   },
   data () {
     return {
@@ -74,8 +73,8 @@ export default {
     getArticles() {
 
       this.$http.get('../../static/titleData.json').then((response) => {
-        this.titleList1 = response.data.articleTitle.slice(-3);
-        this.titleList2 = response.data.articleTitle.slice(-6, -3);
+        this.titleList1 = response.data.article.slice(-3);
+        this.titleList2 = response.data.article.slice(-6, -3);
       })
     },
 
@@ -89,9 +88,6 @@ export default {
       return arr;
     },
 
-    open() {
-      this.$router.push('articleDetail')
-    },
 
     // start progress
     startProgress() {
@@ -138,7 +134,11 @@ export default {
 <style lang="less" scoped>
 
 @import "../css/userControl.less";
+.c-article-title{
 
+  width: 100%;
+  text-align: center;
+}
 .c-article-bar, .c-article-bar-bg {
 
   margin-top: 100px;
@@ -186,55 +186,6 @@ export default {
     flex-wrap: nowrap;
     -webkit-flex-wrap: nowrap;
     text-align: center;
-  }
-}
-
-.c-article-more-btn{
-
-  border-radius: 15px;
-  display: inline-block;
-  position: absolute;
-  background-color: lightseagreen;
-  width: 70px;
-  height: 30px;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px lightgray;
-  bottom: 0;
-  left: 50%;
-  margin-left: -60px;
-
-  .btn-font{
-
-    text-align: center;
-    float: left;
-    line-height: 30px;
-    color: white;
-    font-weight: bolder;
-    transition: all .5s;
-    margin-left: 15px;
-  }
-
-  .btn-arrow{
-    width: 5px;
-    height: 5px;
-    border-right: 2px solid white; 
-    border-bottom: 2px solid white;
-    transform: rotate(-45deg);  
-    float: right;
-    display: none;
-    margin-top: 12px;
-    margin-right: 8px;
-    transition: all 1s;
-  }
-
-  &:hover{
-    .btn-font{
-      transform: translateX(-5px);
-    }
-
-    .btn-arrow{
-      display: block;
-    }
   }
 }
 
