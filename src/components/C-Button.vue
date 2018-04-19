@@ -10,7 +10,7 @@ export default {
   methods: {
 
     open() {
-      // this.$router.push('articleDetail');
+      this.$router.push({ name: 'articleDetail', params: { path: this.articlePath }});
       console.log(this.articlePath);
     }
   }

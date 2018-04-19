@@ -22,6 +22,7 @@ export default new Router(
 
       {
         path: '/articleDetail',
+        name: 'articleDetail',
         component: ArticleDetail
       }
     ]

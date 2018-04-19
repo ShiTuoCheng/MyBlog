@@ -2,7 +2,7 @@
   <section class="article wrapper">
     <ul class="article-list">
       <transition-group name="list">
-        <li class="article-list-item" v-for="(titleItem, index) in titleList" :key="index">{{titleItem}}</li>
+        <li class="article-list-item" v-for="(titleItem, index) in titleList" :key="index" @click="open(titleItem.path)">{{titleItem.title}}</li>
       </transition-group>
     </ul>
   </section>
@@ -19,7 +19,13 @@ export default {
 
   created() {
 
-    this.$http.get('../../static/titleData.json').then((res) => this.titleList = res.data.article.map(v => v.title));
+    this.$http.get('../../static/titleData.json').then((res) => this.titleList = res.data.article);
+  }, 
+
+  methods: {
+    open(v) {
+      this.$router.push({name: 'articleDetail', params: { path: v }});
+    }
   }
 }
 </script>

@@ -2,39 +2,39 @@
   "article": [
     {
       "title":"个人对javascript-quiz中一些题目的解析",
-      "path": "/static/articles/quizeAnswer.md"
+      "path": "../../static/articles/quizeAnswer.md"
     },
     {
       "title": "个人对javascript中的事件循环(Event Loop)的一些见解",
-      "path": "/static/articles/eventLoop.md"
+      "path": "../../static/articles/eventLoop.md"
     },
     {
       "title": "个人对javascript中执行过程的一些见解",
-      "path": "/static/articles/execution.md"
+      "path": "../../static/articles/execution.md"
     },
     {
       "title": "== 和 === 到底有什么区别",
-      "path": "/static/articles/equal.md"
+      "path": "../../static/articles/equal.md"
     },
     {
       "title": "http缓存笔记",
-      "path": "/static/articles/http.md"
+      "path": "../../static/articles/http.md"
     },
     {
       "title": "web存储的笔记",
-      "path": "/static/articles/webStorage.md"
+      "path": "../../static/articles/webStorage.md"
     },
     {
       "title": "一道考察js按值传递参数总结加笔记",
-      "path": "/static/articles/param.md"
+      "path": "../../static/articles/param.md"
     },
     {
       "title": "个人解析perfectionkills——javascript-quiz",
-      "path": "/static/articles/perfectionkills_js_quiz.md"
+      "path": "../../static/articles/perfectionkills_js_quiz.md"
     },
     {
       "title": "总结css以及js加在对页面的影响",
-      "path": "/static/articles/opz_css_js.md"
+      "path": "../../static/articles/opz_css_js.md"
     }
   ]
 }
