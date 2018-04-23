@@ -1,0 +1,20 @@
+{
+  "SkillData": [
+    {
+      "progress": "85",
+      "color": "#00ff80b0"
+    },
+    {
+      "progress": "60",
+      "color": "#ffee00b4"
+    },
+    {
+      "progress": "52",
+      "color": "#ffee00b4"
+    },
+    {
+      "progress": "75",
+      "color": "#00ff80b0"
+    }
+  ]
+}

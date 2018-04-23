@@ -7,6 +7,13 @@ import router from "./router/router.js";
 
 Vue.config.productionTip = false;
 
+// 百分比过滤器
+Vue.filter('percent', (v) => {
+
+  if (!v) return;
+  return v + '%';
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

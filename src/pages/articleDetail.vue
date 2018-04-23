@@ -70,16 +70,16 @@ export default {
 
 .article-detail{
   position: absolute;
-  top: 200px;
-  width: 1200px;
-  min-width: 1200px;
+  top: 120px;
+  width: 1150px;
+  min-width: 1150px;
   margin: 0 auto;
   background-color: #eeeeee;
 
     padding: 20px;
 
   &-content{
-    width: 1200px;
+    width: 1150px;
     margin: 0 auto;
   }
 }

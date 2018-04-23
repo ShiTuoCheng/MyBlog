@@ -38,12 +38,12 @@ export default {
 
             {
               title: 'ABOUT',
-              url: 'about'
+              url: 'aboutMe'
             },
             
             {
               title: 'CONTACT',
-              url: 'aboutMe'
+              url: 'contactMe'
             },
       ]
     }
