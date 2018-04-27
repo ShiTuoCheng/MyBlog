@@ -77,7 +77,7 @@ export default {
       setTimeout(() => {
 
         this.getSkill(); 
-      }, 1000);
+      }, 500);
     });
   },
 

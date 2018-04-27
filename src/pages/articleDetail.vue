@@ -1,13 +1,18 @@
 <template>
-
   <section class="article-detail">
+    <v-article-left-section></v-article-left-section>
     <article id="article-detail-content" class="markdown-body">
     </article>
   </section>
 </template>
 <script>
+import vArticleLeftSection from '../components/ArticleLeftSection';
+
 export default {
   name: 'ArticleDetail',
+  components:{
+    vArticleLeftSection
+  },
   data() {
     return {
       PATH: '',
@@ -34,8 +39,6 @@ export default {
     this.data.push(require('../../static/articles/scope.md')); //8
     this.data.push(require('../../static/articles/quizeAnswer.md')); //9
     this.data.push(require('../../static/articles/webStorage.md')); // 10
-
-    console.log(document.getElementById('article-detail-content'))
   },
 
   mounted() {
@@ -70,7 +73,7 @@ export default {
 
 .article-detail{
   position: absolute;
-  top: 120px;
+  top: 60px;
   width: 1150px;
   min-width: 1150px;
   margin: 0 auto;
